@@ -1,0 +1,41 @@
+@font-face{font-family:UnifiedSeoul;src:url('main/assets/Seoul-Medium.ttf');font-weight:400;font-display:swap}@font-face{font-family:UnifiedSeoul;src:url('main/assets/Seoul-ExtraBold.ttf');font-weight:800;font-display:swap}body>header{display:none!important}body{padding-top:81px!important}html{scroll-padding-top:100px!important}@media(max-width:520px){body{padding-top:112px!important}html{scroll-padding-top:128px!important}}@font-face{font-family:SeoulAlrimLocal;src:url('ai-video/fonts/asset_01.otf');font-weight:400 500;font-display:swap}
+@font-face{font-family:SeoulAlrimHeavy;src:url('ai-video/fonts/asset_04.otf');font-weight:900;font-display:swap}
+body[data-site-page="portfolio"] .hero-copy h1{font-family:SeoulAlrimHeavy,sans-serif;font-size:clamp(30px,8.773125vw,165.333333px);font-weight:900;line-height:1.16;letter-spacing:-.035em;margin:0 0 56px}
+body[data-site-page="portfolio"] .hero-copy p{font-family:SeoulAlrimLocal,sans-serif;font-size:52px;font-weight:500;line-height:1.45;letter-spacing:normal;margin:0 0 36px;color:#222}
+body[data-site-page="portfolio"] .cta{box-sizing:border-box;width:315.2px;height:64px;max-width:100%;font-family:UnifiedSeoul,Arial,sans-serif;font-size:32px;font-weight:400;line-height:1;background:#e0ff4f;color:#000;padding:0 20px;display:flex;align-items:center;justify-content:center;gap:0;border:0;border-radius:0;margin:0;flex:none;white-space:nowrap;letter-spacing:normal}
+body[data-site-page="portfolio"] .cta span{font-size:inherit}
+body[data-site-page="portfolio"] .cta:hover,body[data-site-page="portfolio"] .cta:focus-visible{background:#d5f440;color:#000;transform:none;box-shadow:none}
+body[data-site-page="contact"] #inquiry::before{display:none;content:none}
+@media(max-width:1200px){body[data-site-page="portfolio"] .hero-copy h1{font-size:clamp(30px,8.61vw,124pt)}body[data-site-page="portfolio"] .hero-copy p{font-size:clamp(22px,2.71vw,52px)}}
+@media(max-width:750px){body[data-site-page="portfolio"] .cta{font-size:24px}}
+@media(max-width:650px){body[data-site-page="portfolio"] .hero-copy h1{font-size:clamp(32px,8.6vw,56px);margin-bottom:32px}body[data-site-page="portfolio"] .hero-copy p{font-size:clamp(17px,4.2vw,26px)}}
+/* Shared first-title position and footer across all four pages. */
+:root{--hero-title-top:clamp(110px,20.7svh,207px)}
+body[data-site-page="main"] .hero.text-hero,body[data-site-page="portfolio"] main>.hero,body[data-site-page="ai-video"] .hero-screen,body[data-site-page="contact"] #inquiry>.hero{box-sizing:border-box;justify-content:flex-start!important;padding-top:var(--hero-title-top)!important;min-height:calc(100svh - 81px);height:auto}
+body[data-site-page="main"] .hero.text-hero{align-items:flex-start!important}
+body[data-site-page="portfolio"] .hero-copy,body[data-site-page="main"] .hero-content{margin-top:0!important}
+body[data-site-page="ai-video"] .hero-screen>.intro-content{position:relative;transform:none!important}
+body[data-site-page="ai-video"] .hero-screen>.intro-content>h2{position:absolute;bottom:100%;left:0;width:100%;margin:0 0 24px!important}
+body[data-site-page="contact"] #inquiry>.hero h1{margin-top:0!important}
+body[data-site-page="portfolio"] .hero-copy h1{white-space:normal}
+body[data-site-page="portfolio"] .cta{gap:0;text-align:center}
+footer:not(.unified-footer){display:none!important}
+body footer.unified-footer{box-sizing:border-box;display:flex!important;justify-content:space-between;align-items:flex-start;gap:24px;max-width:none;width:92%;margin:0 auto;padding:24px 2% 32px;border:0;border-top:1px solid #ddd;background:#fff;color:#606b89;font-family:UnifiedSeoul,Arial,sans-serif;font-size:12px;line-height:1.9;text-align:left}
+body .unified-footer>div:not(:first-child){color:#444957}
+body .unified-footer .footer-links{display:flex;gap:22px;flex-wrap:wrap}
+body .unified-footer a{color:inherit;text-decoration:none;font-size:inherit}
+body .unified-footer p{display:block;margin:12px 0;font-size:inherit;color:inherit}
+@media(max-width:750px){body footer.unified-footer{flex-direction:column;padding:20px 0 28px}}
+/* Main Heavy title and reachable footer. */
+body[data-site-page="main"] .text-hero .hero-content h1{font-family:SeoulAlrimHeavy,sans-serif;font-weight:900}
+html:has(body[data-site-page="main"]){scroll-snap-type:y proximity!important}
+body[data-site-page="main"] .unified-footer{scroll-snap-align:end;scroll-snap-stop:normal}
+/* Full first-screen video, with copy revealed after playback. */
+body[data-site-page="portfolio"] main>.hero{position:relative;width:100vw;margin-left:calc(50% - 50vw);height:calc(100svh - 81px);min-height:0;padding:var(--hero-title-top) 24px 32px!important;overflow:hidden;background:#000;isolation:isolate}
+.portfolio-banner-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:-2}
+body[data-site-page="portfolio"] main>.hero::after{content:"";position:absolute;inset:0;background:#0005;z-index:-1;opacity:0;transition:opacity .65s}
+body[data-site-page="portfolio"] main>.hero .hero-copy{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .8s}
+body[data-site-page="portfolio"] main>.hero.banner-ended .hero-copy{opacity:1;visibility:visible;pointer-events:auto}
+body[data-site-page="portfolio"] main>.hero.banner-ended::after{opacity:1}
+body[data-site-page="portfolio"] .hero-copy h1,body[data-site-page="portfolio"] .hero-copy p{color:#fff}
+@media(max-width:520px){body[data-site-page="portfolio"] main>.hero{height:calc(100svh - 112px)}}
